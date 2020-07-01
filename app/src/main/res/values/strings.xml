@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SpaceXInfo</string>
+    <string name="mission_patch">Mission Patch</string>
+    <string name="title_placeholder">SpaceXInfo Title</string>
+    <string name="rocket_type_placeholder">SpaceXInfo Rocket</string>
+    <string name="date_placeholder">SpaceXInfo Date</string>
 </resources>

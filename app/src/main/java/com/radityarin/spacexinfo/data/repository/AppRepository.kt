@@ -1,6 +1,5 @@
 package com.radityarin.spacexinfo.data.repository
 
-import android.util.Log
 import com.radityarin.spacexinfo.data.ApiObserver
 import com.radityarin.spacexinfo.data.model.launches.Launches
 import com.radityarin.spacexinfo.data.model.launches.LaunchesItem
@@ -33,7 +32,6 @@ class AppRepository(private val api: Api) : Repository {
             .subscribe(object : ApiObserver<Launches>(compositeDisposable) {
                 override fun onApiSuccess(data: Launches) {
                     onResult(data)
-                    Log.d("cek", data[0].missionName)
                 }
 
                 override fun onApiError(er: Throwable) {

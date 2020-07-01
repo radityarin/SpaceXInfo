@@ -32,6 +32,10 @@ android {
     viewBinding {
         enabled = true
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -42,6 +46,7 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:$constraintlayoutVersion"
 
     implementation "com.google.android.material:material:$materialVersion"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 
     //Kotlin Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
@@ -62,8 +67,10 @@ dependencies {
 
     implementation "com.squareup.okhttp3:logging-interceptor:$okHttpInterceptorVersion"
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
-
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'

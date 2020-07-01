@@ -1,7 +1,10 @@
 package com.radityarin.spacexinfo.data.model.launches
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
+import java.io.Serializable
 
 data class Timeline(
     @SerializedName("beco")
@@ -63,5 +66,5 @@ data class Timeline(
     @SerializedName("stage2_rp1_loading")
     val stage2Rp1Loading: Int,
     @SerializedName("webcast_liftoff")
-    val webcastLiftoff: Any
-)
+    val webcastLiftoff: String
+): Serializable

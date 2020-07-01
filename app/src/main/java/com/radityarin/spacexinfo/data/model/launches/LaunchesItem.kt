@@ -1,11 +1,11 @@
 package com.radityarin.spacexinfo.data.model.launches
 
-
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
-data class LaunchesItem(
+data class LaunchesItem (
     @SerializedName("crew")
-    val crew: List<Any>,
+    val crew: List<String>,
     @SerializedName("details")
     val details: String,
     @SerializedName("flight_number")
@@ -45,13 +45,13 @@ data class LaunchesItem(
     @SerializedName("links")
     val links: Links,
     @SerializedName("mission_id")
-    val missionId: List<Any>,
+    val missionId: List<String>,
     @SerializedName("mission_name")
     val missionName: String,
     @SerializedName("rocket")
     val rocket: Rocket,
     @SerializedName("ships")
-    val ships: List<Any>,
+    val ships: List<String>,
     @SerializedName("static_fire_date_unix")
     val staticFireDateUnix: Int,
     @SerializedName("static_fire_date_utc")
@@ -66,4 +66,4 @@ data class LaunchesItem(
     val timeline: Timeline,
     @SerializedName("upcoming")
     val upcoming: Boolean
-)
+) : Serializable

@@ -2,26 +2,27 @@ package com.radityarin.spacexinfo.data.model.launches
 
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Core(
     @SerializedName("block")
     val block: Int,
     @SerializedName("core_serial")
-    val coreSerial: Any,
+    val coreSerial: String,
     @SerializedName("flight")
-    val flight: Any,
+    val flight: String,
     @SerializedName("gridfins")
-    val gridfins: Any,
+    val gridfins: String,
     @SerializedName("land_success")
-    val landSuccess: Any,
+    val landSuccess: String,
     @SerializedName("landing_intent")
-    val landingIntent: Any,
+    val landingIntent: String,
     @SerializedName("landing_type")
-    val landingType: Any,
+    val landingType: String,
     @SerializedName("landing_vehicle")
-    val landingVehicle: Any,
+    val landingVehicle: String,
     @SerializedName("legs")
-    val legs: Any,
+    val legs: String,
     @SerializedName("reused")
     val reused: Boolean
-)
+): Serializable
