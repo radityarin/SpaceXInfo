@@ -7,44 +7,14 @@
 
         <variable
             name="item"
-            type="com.radityarin.spacexinfo.ui.missions.MissionsFragmentViewModel" />
+            type="com.radityarin.spacexinfo.ui.rockets.RocketFragmentViewModel" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".ui.missions.MissionsFragment">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="32dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/shape_tab"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btn_upcoming_launch"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/tab_effect"
-                android:text="@string/upcoming_launch_label"
-                android:textAllCaps="false" />
-
-            <Button
-                android:id="@+id/btn_past_launch"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/tab_effect"
-                android:text="@string/past_launch_label"
-                android:textAllCaps="false" />
-
-
-        </LinearLayout>
+        tools:context=".ui.rockets.RocketsFragment">
 
         <com.facebook.shimmer.ShimmerFrameLayout
             android:id="@+id/shimmer_view_container"
@@ -71,11 +41,10 @@
             android:layout_height="match_parent">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_launches"
+                android:id="@+id/rv_rockets"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent" />
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
     </LinearLayout>
 </layout>

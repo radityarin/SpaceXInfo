@@ -5,6 +5,10 @@
         android:title="@string/missions_label"
         android:icon="@drawable/ic_baseline_format_list_bulleted_24"/>
 
+    <item android:id="@+id/rocketsFragment"
+        android:title="@string/rockets_label"
+        android:icon="@drawable/rockets"/>
+
     <item android:id="@+id/historyFragment"
         android:title="@string/history_label"
         android:icon="@drawable/ic_baseline_history_24"/>

@@ -20,4 +20,8 @@
         android:name="com.radityarin.spacexinfo.ui.history.HistoryFragment"
         android:label="History"
         tools:layout="@layout/fragment_history" />
+    <fragment
+        android:id="@+id/rocketsFragment"
+        android:name="com.radityarin.spacexinfo.ui.rockets.RocketsFragment"
+        android:label="RocketsFragment" />
 </navigation>

@@ -29,7 +29,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.detail.DetailActivity" />
+        <activity android:name=".ui.detail.DetailActivity"
+            android:theme="@style/AppThemeWithActionBar"
+            android:parentActivityName=".ui.home.HomeActivity"/>
     </application>
 
 </manifest>

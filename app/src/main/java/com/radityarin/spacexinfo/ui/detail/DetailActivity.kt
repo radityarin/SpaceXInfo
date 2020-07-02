@@ -1,12 +1,17 @@
 package com.radityarin.spacexinfo.ui.detail
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.radityarin.spacexinfo.R
 import com.radityarin.spacexinfo.data.model.launches.LaunchesItem
 import com.radityarin.spacexinfo.databinding.ActivityDetailBinding
 import com.radityarin.spacexinfo.util.Constant.LAUNCH_EXTRA
+
 
 class DetailActivity : AppCompatActivity() {
 
@@ -29,9 +34,24 @@ class DetailActivity : AppCompatActivity() {
                 .placeholder(R.drawable.missionpatchplaceholder)
                 .into(ivMissionPatch)
             tvTitle.text = itemLaunches.missionName
+            tvPayload.text = itemLaunches.rocket.secondStage.payloads[0].payloadId
             tvRocket.text = itemLaunches.rocket.rocketName
             tvDate.text = itemLaunches.launchDateLocal
+            tvLaunchSite.text = itemLaunches.launchSite.siteNameLong
             tvDescription.text = itemLaunches.details
+
+            btnWatchVideo.setOnClickListener {
+                if (itemLaunches.links.videoLink != null) {
+                    startActivity(
+                        Intent(
+                            Intent.ACTION_VIEW,
+                            Uri.parse(itemLaunches.links.videoLink.toString())
+                        )
+                    )
+                } else {
+                    Toast.makeText(this@DetailActivity, "Sorry no video available for this launch", Toast.LENGTH_SHORT).show()
+                }
+            }
         }
     }
 }

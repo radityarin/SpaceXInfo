@@ -63,8 +63,11 @@ class MissionsFragment : Fragment() {
         with(binding) {
             shimmerViewContainer.startShimmerAnimation()
             swipeRefresh.setOnRefreshListener {
-                viewModel.getUpcomingLaunch()
-                viewModel.getPastLaunch()
+                if (btnPastLaunch.isSelected) {
+                    viewModel.getPastLaunch()
+                } else {
+                    viewModel.getUpcomingLaunch()
+                }
             }
             btnPastLaunch.setOnClickListener {
                 showPastLaunch()
@@ -84,7 +87,7 @@ class MissionsFragment : Fragment() {
         rv_launches.visibility = View.GONE
         shimmer_view_container.startShimmerAnimation()
         btn_past_launch.setTextColor(Color.WHITE)
-        btn_upcoming_launch.setTextColor(resources.getColor(R.color.colorAccent))
+        btn_upcoming_launch.setTextColor(resources.getColor(R.color.colorPrimaryDark))
         btn_past_launch.isSelected = true
         btn_upcoming_launch.isSelected = false
     }
@@ -94,7 +97,7 @@ class MissionsFragment : Fragment() {
         rv_launches.visibility = View.GONE
         shimmer_view_container.startShimmerAnimation()
         btn_upcoming_launch.setTextColor(Color.WHITE)
-        btn_past_launch.setTextColor(resources.getColor(R.color.colorAccent))
+        btn_past_launch.setTextColor(resources.getColor(R.color.colorPrimaryDark))
         btn_upcoming_launch.isSelected = true
         btn_past_launch.isSelected = false
     }

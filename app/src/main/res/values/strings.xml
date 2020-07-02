@@ -13,4 +13,6 @@
     <string name="history_label">History</string>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
+    <string name="rocket_photo_label">Rocket Photo</string>
+    <string name="rockets_label">Rockets</string>
 </resources>

@@ -3,7 +3,6 @@ package com.radityarin.spacexinfo.ui.home
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.radityarin.spacexinfo.databinding.ActivityHomeBinding
 import kotlinx.android.synthetic.main.activity_home.*
@@ -27,6 +26,5 @@ class HomeActivity : AppCompatActivity() {
 
         // Setting Navigation Controller with the BottomNavigationView
         bottomNavigation.setupWithNavController(navController)
-        NavigationUI.setupActionBarWithNavController(this, navController)
     }
 }

@@ -1,16 +1,16 @@
 package com.radityarin.spacexinfo.data.repository
 
 import android.util.Log
-import com.radityarin.spacexinfo.data.ApiObserver
+import com.radityarin.spacexinfo.util.ApiObserver
 import com.radityarin.spacexinfo.data.model.historical.History
 import com.radityarin.spacexinfo.data.model.launches.Launches
 import com.radityarin.spacexinfo.data.model.launches.LaunchesItem
+import com.radityarin.spacexinfo.data.model.rockets.Rockets
 import com.radityarin.spacexinfo.data.source.Api
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
-import io.reactivex.rxjava3.core.Observer
 import io.reactivex.rxjava3.disposables.CompositeDisposable
-import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.schedulers.Schedulers
+import java.util.*
 
 class AppRepository(private val api: Api) : Repository {
 
@@ -23,7 +23,6 @@ class AppRepository(private val api: Api) : Repository {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(object : ApiObserver<Launches>(compositeDisposable) {
                 override fun onApiSuccess(data: Launches) {
-                    Log.d("cek", "onApiSuccess: $data")
                     onResult(data)
                 }
 
@@ -42,7 +41,7 @@ class AppRepository(private val api: Api) : Repository {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(object : ApiObserver<Launches>(compositeDisposable) {
                 override fun onApiSuccess(data: Launches) {
-                    Log.d("cek", "onApiSuccess pl: $data")
+                    Collections.reverse(data)
                     onResult(data)
                 }
 
@@ -50,28 +49,6 @@ class AppRepository(private val api: Api) : Repository {
                     onError(er)
                 }
             })
-//        compositeDisposable.add(api.getPastLaunch().observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io()).subscribe())
-//        api.getPastLaunch()
-//            .subscribeOn(Schedulers.io())
-//            .observeOn(AndroidSchedulers.mainThread())
-//            .subscribe(object : Observer<Launches> {
-//                override fun onSubscribe(d: Disposable) {
-//                    TODO("Not yet implemented")
-//                }
-//
-//                override fun onNext(t: Launches) {
-//                    TODO("Not yet implemented")
-//                }
-//
-//                override fun onError(e: Throwable) {
-//                    TODO("Not yet implemented")
-//                }
-//
-//                override fun onComplete() {
-//                    TODO("Not yet implemented")
-//                }
-//
-//            })
     }
 
     override fun getUpcomingLaunch(
@@ -83,7 +60,6 @@ class AppRepository(private val api: Api) : Repository {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(object : ApiObserver<Launches>(compositeDisposable) {
                 override fun onApiSuccess(data: Launches) {
-                    Log.d("cek", "onApiSuccess up: $data")
                     onResult(data)
                 }
 
@@ -128,5 +104,22 @@ class AppRepository(private val api: Api) : Repository {
                 }
             })
     }
+
+    override fun getAllRockets(
+        compositeDisposable: CompositeDisposable,
+        onResult: (Rockets) -> Unit
+    ) {
+        api.getAllRockets()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : ApiObserver<Rockets>(compositeDisposable) {
+                override fun onApiSuccess(data: Rockets) {
+                    onResult(data)
+                }
+
+                override fun onApiError(er: Throwable) {
+                    onError(er)
+                }
+            })    }
 
 }

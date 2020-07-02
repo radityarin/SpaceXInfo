@@ -3,6 +3,7 @@ package com.radityarin.spacexinfo.data.repository
 import com.radityarin.spacexinfo.data.model.historical.History
 import com.radityarin.spacexinfo.data.model.launches.Launches
 import com.radityarin.spacexinfo.data.model.launches.LaunchesItem
+import com.radityarin.spacexinfo.data.model.rockets.Rockets
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 
 interface Repository {
@@ -30,5 +31,10 @@ interface Repository {
     fun getHistoricalEvents(
         compositeDisposable: CompositeDisposable,
         onResult: (History) -> Unit
+    )
+
+    fun getAllRockets(
+        compositeDisposable: CompositeDisposable,
+        onResult: (Rockets) -> Unit
     )
 }

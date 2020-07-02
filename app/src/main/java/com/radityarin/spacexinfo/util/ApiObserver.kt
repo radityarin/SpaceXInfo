@@ -1,4 +1,4 @@
-package com.radityarin.spacexinfo.data
+package com.radityarin.spacexinfo.util
 
 import io.reactivex.rxjava3.core.Observer
 import io.reactivex.rxjava3.disposables.CompositeDisposable
