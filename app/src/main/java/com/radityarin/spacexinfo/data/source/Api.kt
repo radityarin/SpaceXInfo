@@ -1,5 +1,6 @@
 package com.radityarin.spacexinfo.data.source
 
+import com.radityarin.spacexinfo.data.model.historical.History
 import com.radityarin.spacexinfo.data.model.launches.Launches
 import com.radityarin.spacexinfo.data.model.launches.LaunchesItem
 import io.reactivex.Observable
@@ -9,12 +10,17 @@ import retrofit2.http.GET
 interface Api {
 
     @GET("launches")
-    fun getAllLaunches(): Observable<Launches>
+    fun getAllLaunch(): Observable<Launches>
 
     @GET("launches/upcoming")
-    fun getUpcomingLaunches(): Observable<Launches>
+    fun getUpcomingLaunch(): Observable<Launches>
+
+    @GET("launches/past")
+    fun getPastLaunch(): Observable<Launches>
 
     @GET("launches/latest")
-    fun getLatestLaunches(): Observable<LaunchesItem>
+    fun getLatestLaunch(): Observable<LaunchesItem>
 
+    @GET("history")
+    fun getHistoricalEvents(): Observable<History>
 }

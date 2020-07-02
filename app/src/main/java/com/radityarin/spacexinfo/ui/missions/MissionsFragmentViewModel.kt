@@ -13,24 +13,31 @@ class MissionsFragmentViewModel constructor(
 
     private val compositeDisposable = CompositeDisposable()
 
-    var allLaunches : MutableLiveData<Launches> = MutableLiveData()
+    var allLaunch : MutableLiveData<Launches> = MutableLiveData()
+    var pastLaunch : MutableLiveData<Launches> = MutableLiveData()
     var upcomingLaunch : MutableLiveData<Launches> = MutableLiveData()
     var latestLaunch : MutableLiveData<LaunchesItem> = MutableLiveData()
 
     fun getAllLaunches(){
-        repository.getAllLaunches(compositeDisposable) {
-            allLaunches.postValue(it)
+        repository.getAllLaunch(compositeDisposable) {
+            allLaunch.postValue(it)
+        }
+    }
+
+    fun getPastLaunch(){
+        repository.getPastLaunch(compositeDisposable) {
+            pastLaunch.postValue(it)
         }
     }
 
     fun getLatestLaunch(){
-        repository.getLatestLaunches(compositeDisposable) {
+        repository.getLatestLaunch(compositeDisposable) {
             latestLaunch.postValue(it)
         }
     }
 
     fun getUpcomingLaunch(){
-        repository.getUpcomingLaunches(compositeDisposable) {
+        repository.getUpcomingLaunch(compositeDisposable) {
             upcomingLaunch.postValue(it)
         }
     }
@@ -39,4 +46,5 @@ class MissionsFragmentViewModel constructor(
         super.onCleared()
         compositeDisposable.dispose()
     }
+
 }

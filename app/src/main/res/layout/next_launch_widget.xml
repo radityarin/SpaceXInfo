@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ui.detail.DetailActivity">
+    android:layout_height="wrap_content"
+    android:paddingVertical="8dp"
+    android:paddingHorizontal="16dp"
+    android:background="@drawable/widget_background"
+    android:orientation="horizontal">
 
     <ImageView
-        android:id="@+id/iv_mission_patch"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_gravity="center_horizontal"
+        android:id="@+id/iv_mission_patches"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_vertical"
         android:scaleType="fitCenter"
-        android:src="@color/colorPrimary"
-        android:contentDescription="@string/mission_patch" />
+        android:src="@drawable/missionpatchplaceholder"
+        android:contentDescription="TODO" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,7 +24,7 @@
         android:padding="8dp">
 
         <TextView
-            android:id="@+id/tv_title"
+            android:id="@+id/tv_launch_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/title_placeholder"
@@ -31,22 +32,16 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tv_rocket"
+            android:id="@+id/tv_launch_rocket"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/rocket_type_placeholder" />
 
         <TextView
-            android:id="@+id/tv_date"
+            android:id="@+id/tv_launch_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/date_placeholder" />
-
-        <TextView
-            android:id="@+id/tv_description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/description_placeholder" />
 
     </LinearLayout>
 

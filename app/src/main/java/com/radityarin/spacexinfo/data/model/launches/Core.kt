@@ -8,21 +8,21 @@ data class Core(
     @SerializedName("block")
     val block: Int,
     @SerializedName("core_serial")
-    val coreSerial: String,
+    val coreSerial: Any,
     @SerializedName("flight")
-    val flight: String,
+    val flight: Any,
     @SerializedName("gridfins")
-    val gridfins: String,
+    val gridfins: Any,
     @SerializedName("land_success")
-    val landSuccess: String,
+    val landSuccess: Any,
     @SerializedName("landing_intent")
-    val landingIntent: String,
+    val landingIntent: Any,
     @SerializedName("landing_type")
-    val landingType: String,
+    val landingType: Any,
     @SerializedName("landing_vehicle")
-    val landingVehicle: String,
+    val landingVehicle: Any,
     @SerializedName("legs")
-    val legs: String,
+    val legs: Any,
     @SerializedName("reused")
     val reused: Boolean
 ): Serializable

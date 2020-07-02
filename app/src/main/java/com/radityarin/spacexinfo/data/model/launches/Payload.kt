@@ -1,9 +1,7 @@
 package com.radityarin.spacexinfo.data.model.launches
 
 
-import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
 import java.io.Serializable
 
 data class Payload(
@@ -14,7 +12,7 @@ data class Payload(
     @SerializedName("nationality")
     val nationality: String,
     @SerializedName("norad_id")
-    val noradId: List<String>,
+    val noradId: List<Any>,
     @SerializedName("orbit")
     val orbit: String,
     @SerializedName("orbit_params")
@@ -22,9 +20,9 @@ data class Payload(
     @SerializedName("payload_id")
     val payloadId: String,
     @SerializedName("payload_mass_kg")
-    val payloadMassKg: String,
+    val payloadMassKg: Any,
     @SerializedName("payload_mass_lbs")
-    val payloadMassLbs: String,
+    val payloadMassLbs: Any,
     @SerializedName("payload_type")
     val payloadType: String,
     @SerializedName("reused")

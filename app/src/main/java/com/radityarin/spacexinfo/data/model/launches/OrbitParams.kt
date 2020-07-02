@@ -1,40 +1,38 @@
 package com.radityarin.spacexinfo.data.model.launches
 
 
-import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
 import java.io.Serializable
 
 data class OrbitParams(
     @SerializedName("apoapsis_km")
-    val apoapsisKm: String,
+    val apoapsisKm: Any,
     @SerializedName("arg_of_pericenter")
-    val argOfPericenter: String,
+    val argOfPericenter: Any,
     @SerializedName("eccentricity")
-    val eccentricity: String,
+    val eccentricity: Any,
     @SerializedName("epoch")
-    val epoch: String,
+    val epoch: Any,
     @SerializedName("inclination_deg")
-    val inclinationDeg: String,
+    val inclinationDeg: Any,
     @SerializedName("lifespan_years")
     val lifespanYears: Int,
     @SerializedName("longitude")
-    val longitude: String,
+    val longitude: Any,
     @SerializedName("mean_anomaly")
-    val meanAnomaly: String,
+    val meanAnomaly: Any,
     @SerializedName("mean_motion")
-    val meanMotion: String,
+    val meanMotion: Any,
     @SerializedName("periapsis_km")
-    val periapsisKm: String,
+    val periapsisKm: Any,
     @SerializedName("period_min")
-    val periodMin: String,
+    val periodMin: Any,
     @SerializedName("raan")
-    val raan: String,
+    val raan: Any,
     @SerializedName("reference_system")
     val referenceSystem: String,
     @SerializedName("regime")
     val regime: String,
     @SerializedName("semi_major_axis_km")
-    val semiMajorAxisKm: String
-) : Serializable
+    val semiMajorAxisKm: Any
+): Serializable
