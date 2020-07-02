@@ -59,10 +59,6 @@ dependencies {
 
     implementation "org.koin:koin-androidx-viewmodel:$koinVersion"
 
-//    implementation "io.reactivex.rxjava2:rxjava:$rxAndroidVersion"
-//    implementation "io.reactivex.rxjava2:rxandroid:$rxJavaVersion"
-//    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitRxJavaVersion"
-
     // RxJava
     implementation "io.reactivex.rxjava3:rxandroid:3.0.0"
     implementation "io.reactivex.rxjava3:rxjava:3.0.2"
