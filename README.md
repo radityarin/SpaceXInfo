@@ -10,10 +10,10 @@ A SpaceX Information App with android stack MVVM, Live Data, Koin, RxJava etc
 
 ### Screenshots
 
-![List of Missions](screenshots/spacexinfo_missionfragment.jpg "A list of Missions")
-![List of Rockets](screenshots/spacexinfo_rockets.jpg "A list of Rockets")
-![List of Historical Events](screenshots/spacexinfo_historical.jpg "A list of Historical Events")
-![Missions Details](screenshots/spacexinfo_details.jpg "Missions Details")
+![List of Missions](screenshots/spacexinfo_missionfragment.png "A list of Missions")
+![List of Rockets](screenshots/spacexinfo_rockets.png "A list of Rockets")
+![List of Historical Events](screenshots/spacexinfo_historical.png "A list of Historical Events")
+![Missions Details](screenshots/spacexinfo_details.png "Missions Details")
 
 
 ### License
