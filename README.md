@@ -4,17 +4,18 @@ A SpaceX Information App with android stack MVVM, Live Data, Koin, RxJava etc
 ### Library:
 1. Retrofit
 2. Koin
-3. RxJava2
+3. RxJava3
 4. Glide
 5. ViewBinding
+6. Facebook Shimmer
+7. Jetpack Navigation 
 
 ### Screenshots
 
 ![List of Missions](screenshots/spacexinfo_missionfragment.png "A list of Missions")
+![Missions Details](screenshots/spacexinfo_details.png "Missions Details")
 ![List of Rockets](screenshots/spacexinfo_rockets.png "A list of Rockets")
 ![List of Historical Events](screenshots/spacexinfo_historical.png "A list of Historical Events")
-![Missions Details](screenshots/spacexinfo_details.png "Missions Details")
-
 
 ### License
 ```
