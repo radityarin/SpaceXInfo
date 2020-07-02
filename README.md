@@ -1,6 +1,10 @@
 # SpaceXInfo
 A SpaceX Information App with android stack MVVM, Live Data, Koin, RxJava etc
 
+### API
+SpaceX API by r/SpaceX Developer
+https://docs.spacexdata.com/?version=latest
+
 ### Library:
 1. Retrofit
 2. Koin
