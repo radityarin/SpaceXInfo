@@ -1,13 +1,15 @@
 package com.radityarin.spacexinfo
 
 import android.app.Application
+import android.content.ContentValues
+import android.util.Log
 import com.radityarin.spacexinfo.di.appModule
 import com.radityarin.spacexinfo.di.networkModule
 import com.radityarin.spacexinfo.di.repositoryModule
 import com.radityarin.spacexinfo.di.viewModelModule
+import io.reactivex.rxjava3.plugins.RxJavaPlugins
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
-import uk.co.chrisjenx.calligraphy.CalligraphyConfig
 
 class AppController : Application() {
 
@@ -21,6 +23,9 @@ class AppController : Application() {
             modules(repositoryModule)
         }
 
+        RxJavaPlugins.setErrorHandler {
+            Log.d(ContentValues.TAG, it.message.toString())
+        }
     }
 
 }

@@ -3,7 +3,7 @@ package com.radityarin.spacexinfo.data.repository
 import com.radityarin.spacexinfo.data.model.historical.History
 import com.radityarin.spacexinfo.data.model.launches.Launches
 import com.radityarin.spacexinfo.data.model.launches.LaunchesItem
-import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.rxjava3.disposables.CompositeDisposable
 
 interface Repository {
 

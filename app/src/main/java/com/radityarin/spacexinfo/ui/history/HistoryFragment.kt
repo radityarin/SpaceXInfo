@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.radityarin.spacexinfo.data.model.historical.HistoryItem
 import com.radityarin.spacexinfo.databinding.FragmentHistoryBinding
 import com.radityarin.spacexinfo.ui.adapter.HistoricalAdapter
-import io.reactivex.plugins.RxJavaPlugins
 import kotlinx.android.synthetic.main.fragment_missions.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -59,11 +58,6 @@ class HistoryFragment : Fragment() {
         return historicalAdapter
     }
     private fun observe(adapter: HistoricalAdapter) {
-        RxJavaPlugins.setErrorHandler {
-            Log.d(ContentValues.TAG, it.message.toString())
-            shimmer_view_container.stopShimmerAnimation()
-            shimmer_view_container.visibility = View.GONE
-        }
         viewModel.allHistoricalEvents.observe(viewLifecycleOwner, Observer {
             adapter.addAll(it)
             shimmer_view_container.stopShimmerAnimation()

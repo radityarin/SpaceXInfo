@@ -16,7 +16,7 @@ data class OrbitParams(
     @SerializedName("inclination_deg")
     val inclinationDeg: Any,
     @SerializedName("lifespan_years")
-    val lifespanYears: Int,
+    val lifespanYears: Any,
     @SerializedName("longitude")
     val longitude: Any,
     @SerializedName("mean_anomaly")

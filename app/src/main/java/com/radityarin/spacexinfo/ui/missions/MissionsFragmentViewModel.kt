@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.radityarin.spacexinfo.data.model.launches.Launches
 import com.radityarin.spacexinfo.data.model.launches.LaunchesItem
 import com.radityarin.spacexinfo.data.repository.AppRepository
-import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.rxjava3.disposables.CompositeDisposable
 
 class MissionsFragmentViewModel constructor(
     private val repository: AppRepository
