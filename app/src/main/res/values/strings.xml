@@ -4,4 +4,8 @@
     <string name="title_placeholder">SpaceXInfo Title</string>
     <string name="rocket_type_placeholder">SpaceXInfo Rocket</string>
     <string name="date_placeholder">SpaceXInfo Date</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="missions_label">Missions</string>
+    <string name="settings_label">Settings</string>
 </resources>

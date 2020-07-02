@@ -1,4 +1,4 @@
-package com.radityarin.spacexinfo.ui.main
+package com.radityarin.spacexinfo.ui.missions
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -7,7 +7,7 @@ import com.radityarin.spacexinfo.data.model.launches.LaunchesItem
 import com.radityarin.spacexinfo.data.repository.AppRepository
 import io.reactivex.disposables.CompositeDisposable
 
-class MainActivityViewModel constructor(
+class MissionsFragmentViewModel constructor(
     private val repository: AppRepository
 ) : ViewModel() {
 
@@ -39,5 +39,4 @@ class MainActivityViewModel constructor(
         super.onCleared()
         compositeDisposable.dispose()
     }
-
 }
