@@ -8,6 +8,8 @@ object Constant {
     const val BASE_URL = "https://api.spacexdata.com/v3/"
 
     const val LAUNCH_EXTRA = "launch"
+
+    const val HAWK = "Hawk"
 }
 
 object CacheKey {

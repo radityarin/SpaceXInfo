@@ -5,6 +5,7 @@ import android.content.ContentValues
 import android.util.Log
 import com.orhanobut.hawk.Hawk
 import com.radityarin.spacexinfo.di.*
+import com.radityarin.spacexinfo.util.Constant.HAWK
 import io.reactivex.rxjava3.plugins.RxJavaPlugins
 import org.koin.android.ext.android.inject
 import org.koin.android.ext.koin.androidContext
@@ -30,7 +31,7 @@ class AppController : Application() {
 
         Hawk.init(applicationContext).setLogInterceptor { message ->
             if (BuildConfig.DEBUG) {
-                Log.d("Hawk", message)
+                Log.d(HAWK, message)
             }
         }.build()
 
