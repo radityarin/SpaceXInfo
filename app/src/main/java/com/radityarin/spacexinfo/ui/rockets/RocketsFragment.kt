@@ -1,6 +1,5 @@
 package com.radityarin.spacexinfo.ui.rockets
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,14 +10,9 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.radityarin.spacexinfo.data.model.launches.LaunchesItem
-import com.radityarin.spacexinfo.data.model.rockets.RocketsItem
+import com.radityarin.spacexinfo.data.model.rockets.Rockets
 import com.radityarin.spacexinfo.databinding.FragmentRocketsBinding
-import com.radityarin.spacexinfo.ui.adapter.LaunchAdapter
 import com.radityarin.spacexinfo.ui.adapter.RocketAdapter
-import com.radityarin.spacexinfo.ui.detail.DetailActivity
-import com.radityarin.spacexinfo.util.Constant
-import kotlinx.android.synthetic.main.fragment_missions.*
 import kotlinx.android.synthetic.main.fragment_missions.shimmer_view_container
 import kotlinx.android.synthetic.main.fragment_rockets.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -74,7 +68,7 @@ class RocketsFragment : Fragment() {
 
 
     private fun observe(rocketAdapter: RocketAdapter) {
-        viewModel.allRockets.observe(viewLifecycleOwner, Observer {
+        viewModel.rocketsListItems.observe(viewLifecycleOwner, Observer {
             rocketAdapter.addAll(it)
             shimmer_view_container.stopShimmerAnimation()
             shimmer_view_container.visibility = View.GONE
@@ -83,7 +77,7 @@ class RocketsFragment : Fragment() {
         })
     }
 
-    private fun moveToDetailPage(item: RocketsItem) {
+    private fun moveToDetailPage(item: Rockets) {
         Toast.makeText(context, item.rocketName, Toast.LENGTH_SHORT).show()
     }
 

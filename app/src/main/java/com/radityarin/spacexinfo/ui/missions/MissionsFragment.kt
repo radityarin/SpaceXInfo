@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.radityarin.spacexinfo.R
-import com.radityarin.spacexinfo.data.model.launches.LaunchesItem
+import com.radityarin.spacexinfo.data.model.launches.Launch
 import com.radityarin.spacexinfo.databinding.FragmentMissionsBinding
 import com.radityarin.spacexinfo.ui.adapter.LaunchAdapter
 import com.radityarin.spacexinfo.ui.detail.DetailActivity
@@ -60,6 +60,9 @@ class MissionsFragment : Fragment() {
 
 
     private fun initView() {
+        viewModel.getUpcomingLaunch()
+        showUpcomingLaunch()
+
         with(binding) {
             shimmerViewContainer.startShimmerAnimation()
             swipeRefresh.setOnRefreshListener {
@@ -78,8 +81,6 @@ class MissionsFragment : Fragment() {
                 viewModel.getUpcomingLaunch()
             }
         }
-        showUpcomingLaunch()
-        viewModel.getUpcomingLaunch()
     }
 
     private fun showPastLaunch() {
@@ -103,14 +104,7 @@ class MissionsFragment : Fragment() {
     }
 
     private fun observe(launchAdapter: LaunchAdapter) {
-        viewModel.upcomingLaunch.observe(viewLifecycleOwner, Observer {
-            launchAdapter.addAll(it)
-            shimmer_view_container.stopShimmerAnimation()
-            shimmer_view_container.visibility = View.GONE
-            binding.swipeRefresh.isRefreshing = false
-            rv_launches.visibility = View.VISIBLE
-        })
-        viewModel.pastLaunch.observe(viewLifecycleOwner, Observer {
+        viewModel.missionsListItem.observe(viewLifecycleOwner, Observer {
             launchAdapter.addAll(it)
             shimmer_view_container.stopShimmerAnimation()
             shimmer_view_container.visibility = View.GONE
@@ -119,7 +113,14 @@ class MissionsFragment : Fragment() {
         })
     }
 
-    private fun moveToDetailPage(item: LaunchesItem) {
+    private fun onDataChange(
+        launchAdapter: LaunchAdapter,
+        it: ArrayList<Launch>
+    ) {
+        launchAdapter.addAll(it)
+    }
+
+    private fun moveToDetailPage(item: Launch) {
         binding.root.context.startActivity(
             Intent(
                 binding.root.context,

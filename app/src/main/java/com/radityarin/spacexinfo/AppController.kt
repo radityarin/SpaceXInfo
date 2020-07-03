@@ -3,15 +3,17 @@ package com.radityarin.spacexinfo
 import android.app.Application
 import android.content.ContentValues
 import android.util.Log
-import com.radityarin.spacexinfo.di.appModule
-import com.radityarin.spacexinfo.di.networkModule
-import com.radityarin.spacexinfo.di.repositoryModule
-import com.radityarin.spacexinfo.di.viewModelModule
+import com.orhanobut.hawk.Hawk
+import com.radityarin.spacexinfo.di.*
 import io.reactivex.rxjava3.plugins.RxJavaPlugins
+import org.koin.android.ext.android.inject
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig
 
 class AppController : Application() {
+
+    private val calConfig: CalligraphyConfig by inject()
 
     override fun onCreate() {
         super.onCreate()
@@ -21,7 +23,16 @@ class AppController : Application() {
             modules(networkModule)
             modules(viewModelModule)
             modules(repositoryModule)
+            modules(persistenceModule)
         }
+
+        CalligraphyConfig.initDefault(calConfig)
+
+        Hawk.init(applicationContext).setLogInterceptor { message ->
+            if (BuildConfig.DEBUG) {
+                Log.d("Hawk", message)
+            }
+        }.build()
 
         RxJavaPlugins.setErrorHandler {
             Log.d(ContentValues.TAG, it.message.toString())

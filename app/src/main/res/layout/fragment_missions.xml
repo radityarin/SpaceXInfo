@@ -73,6 +73,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_launches"
                 android:layout_width="match_parent"
+                tools:listitem="@layout/item_launches"
                 android:layout_height="match_parent"/>
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

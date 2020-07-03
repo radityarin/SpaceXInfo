@@ -14,9 +14,15 @@ buildscript {
         okHttpInterceptorVersion = '4.2.1'
         retrofitVersion = '2.8.1'
         retrofitVersionConverter = '2.7.2'
-        rxAndroidVersion = '2.2.7'
-        rxJavaVersion = '2.1.1'
-        retrofitRxJavaVersion = '2.8.1'
+        rxAndroidVersion = '3.0.0'
+        rxJavaVersion = '3.0.2'
+        retrofitRxJavaVersion = '3.0.0'
+        glideVersion = '4.11.0'
+        legacyVersion = '1.0.0'
+        navigationVersion = '2.3.0'
+        swipeRefreshVersion = '1.1.0'
+        shimmerVersion = '0.1.0@aar'
+        hawkVersion = '2.0.1'
     }
     repositories {
         google()

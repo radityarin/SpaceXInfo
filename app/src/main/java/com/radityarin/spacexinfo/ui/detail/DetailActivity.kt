@@ -3,12 +3,11 @@ package com.radityarin.spacexinfo.ui.detail
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.radityarin.spacexinfo.R
-import com.radityarin.spacexinfo.data.model.launches.LaunchesItem
+import com.radityarin.spacexinfo.data.model.launches.Launch
 import com.radityarin.spacexinfo.databinding.ActivityDetailBinding
 import com.radityarin.spacexinfo.util.Constant.LAUNCH_EXTRA
 
@@ -27,11 +26,11 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-        val itemLaunches = intent.getSerializableExtra(LAUNCH_EXTRA) as LaunchesItem
+        val itemLaunches = intent.getSerializableExtra(LAUNCH_EXTRA) as Launch
         with(binding) {
             Glide.with(binding.root)
                 .load(itemLaunches.links.missionPatch)
-                .placeholder(R.drawable.missionpatchplaceholder)
+                .placeholder(R.drawable.mission_patch_placeholder)
                 .into(ivMissionPatch)
             tvTitle.text = itemLaunches.missionName
             tvPayload.text = itemLaunches.rocket.secondStage.payloads[0].payloadId

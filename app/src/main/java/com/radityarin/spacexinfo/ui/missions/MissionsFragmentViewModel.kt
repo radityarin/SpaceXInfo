@@ -1,11 +1,15 @@
 package com.radityarin.spacexinfo.ui.missions
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.radityarin.spacexinfo.data.model.launches.Launches
-import com.radityarin.spacexinfo.data.model.launches.LaunchesItem
+import com.radityarin.spacexinfo.data.model.launches.Launch
 import com.radityarin.spacexinfo.data.repository.AppRepository
+import com.radityarin.spacexinfo.util.addTo
 import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.rxjava3.schedulers.Schedulers
+import java.util.*
+import kotlin.collections.ArrayList
 
 class MissionsFragmentViewModel constructor(
     private val repository: AppRepository
@@ -13,33 +17,42 @@ class MissionsFragmentViewModel constructor(
 
     private val compositeDisposable = CompositeDisposable()
 
-    var allLaunch : MutableLiveData<Launches> = MutableLiveData()
-    var pastLaunch : MutableLiveData<Launches> = MutableLiveData()
-    var upcomingLaunch : MutableLiveData<Launches> = MutableLiveData()
-    var latestLaunch : MutableLiveData<LaunchesItem> = MutableLiveData()
+    private val _missionsListItem = MutableLiveData<ArrayList<Launch>>()
+    val missionsListItem: LiveData<ArrayList<Launch>>
+        get() = _missionsListItem
 
     fun getAllLaunches(){
-        repository.getAllLaunch(compositeDisposable) {
-            allLaunch.postValue(it)
-        }
+        repository.getAllLaunch().observeOn(Schedulers.io())
+            .subscribeOn(Schedulers.io())
+            .subscribe({
+                _missionsListItem.postValue(it)
+            }, {
+                it.printStackTrace()
+            })
+            .addTo(compositeDisposable)
     }
 
     fun getPastLaunch(){
-        repository.getPastLaunch(compositeDisposable) {
-            pastLaunch.postValue(it)
-        }
-    }
-
-    fun getLatestLaunch(){
-        repository.getLatestLaunch(compositeDisposable) {
-            latestLaunch.postValue(it)
-        }
+        repository.getPastLaunch().observeOn(Schedulers.io())
+            .subscribeOn(Schedulers.io())
+            .subscribe({
+                it.reverse()
+                _missionsListItem.postValue(it)
+            }, {
+                it.printStackTrace()
+            })
+            .addTo(compositeDisposable)
     }
 
     fun getUpcomingLaunch(){
-        repository.getUpcomingLaunch(compositeDisposable) {
-            upcomingLaunch.postValue(it)
-        }
+        repository.getUpcomingLaunch().observeOn(Schedulers.io())
+            .subscribeOn(Schedulers.io())
+            .subscribe({
+                _missionsListItem.postValue(it)
+            }, {
+                it.printStackTrace()
+            })
+            .addTo(compositeDisposable)
     }
 
     override fun onCleared() {

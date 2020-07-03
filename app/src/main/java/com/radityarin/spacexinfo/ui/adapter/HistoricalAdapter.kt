@@ -3,12 +3,12 @@ package com.radityarin.spacexinfo.ui.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.radityarin.spacexinfo.data.model.historical.HistoryItem
+import com.radityarin.spacexinfo.data.model.historical.History
 import com.radityarin.spacexinfo.databinding.ItemHistoricalEventsBinding
 
-class HistoricalAdapter(val itemOnClickListener: (item: HistoryItem) -> Unit) :
+class HistoricalAdapter(val itemOnClickListener: (item: History) -> Unit) :
     RecyclerView.Adapter<HistoricalAdapter.ViewHolder>() {
-    private val items = mutableListOf<HistoryItem>()
+    private val items = mutableListOf<History>()
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -29,7 +29,7 @@ class HistoricalAdapter(val itemOnClickListener: (item: HistoryItem) -> Unit) :
 
     inner class ViewHolder(private val binding: ItemHistoricalEventsBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: HistoryItem) {
+        fun bind(item: History) {
             with(binding) {
                 root.context?.let {
                     tvHistoryTitle.text = item.title
@@ -45,7 +45,7 @@ class HistoricalAdapter(val itemOnClickListener: (item: HistoryItem) -> Unit) :
         }
     }
 
-    fun addAll(data: List<HistoryItem>) {
+    fun addAll(data: List<History>) {
         items.clear()
         items.addAll(data)
         notifyDataSetChanged()

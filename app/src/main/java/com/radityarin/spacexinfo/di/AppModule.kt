@@ -1,10 +1,9 @@
 package com.radityarin.spacexinfo.di
 
 import com.radityarin.spacexinfo.R
+import com.radityarin.spacexinfo.util.DEFAULT_FONT
 import org.koin.dsl.module
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig
-
-const val DEFAULT_FONT = "assets/onts/GoogleSans-Regular.ttf"
 
 val appModule = module {
 

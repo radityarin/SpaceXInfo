@@ -46,7 +46,7 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:$constraintlayoutVersion"
 
     implementation "com.google.android.material:material:$materialVersion"
-    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swipeRefreshVersion"
 
     //Kotlin Coroutines
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
@@ -58,11 +58,12 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleRuntimeVersion"
 
     implementation "org.koin:koin-androidx-viewmodel:$koinVersion"
+    implementation "com.orhanobut:hawk:$hawkVersion"
 
     // RxJava
-    implementation "io.reactivex.rxjava3:rxandroid:3.0.0"
-    implementation "io.reactivex.rxjava3:rxjava:3.0.2"
-    implementation "com.github.akarnokd:rxjava3-retrofit-adapter:3.0.0"
+    implementation "io.reactivex.rxjava3:rxandroid:$rxAndroidVersion"
+    implementation "io.reactivex.rxjava3:rxjava:$rxJavaVersion"
+    implementation "com.github.akarnokd:rxjava3-retrofit-adapter:$retrofitRxJavaVersion"
 
     implementation "uk.co.chrisjenx:calligraphy:$calligraphyVersion"
 
@@ -70,12 +71,12 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersionConverter"
 
-    implementation 'com.github.bumptech.glide:glide:4.11.0'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.0'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.0'
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    implementation "androidx.legacy:legacy-support-v4:$legacyVersion"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
 
-    implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
+    implementation "com.facebook.shimmer:shimmer:$shimmerVersion"
 
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
