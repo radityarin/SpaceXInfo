@@ -1,5 +1,12 @@
 # SpaceXInfo
-A SpaceX Information App with MVVM Architecture, Retrofit, Glide, Koin, RxJava, etc.
+A SpaceX Information App with MVVM Architecture, Retrofit, Glide, Koin, RxJava, Hawk etc.
+
+### Features
+- Show upcoming launch
+- Show past launch
+- Show all rocket
+- Show all historical events
+- Caching with Hawk makes loads faster
 
 ### API
 SpaceX API by r/SpaceX Developer
@@ -13,6 +20,7 @@ https://docs.spacexdata.com/?version=latest
 5. ViewBinding
 6. Facebook Shimmer
 7. Jetpack Navigation 
+8. Hawk
 
 ### Screenshots
 
