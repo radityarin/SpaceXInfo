@@ -1,5 +1,5 @@
 # SpaceXInfo
-A SpaceX Information App with MVVM Architecture, Live Data, Koin, RxJava, etc.
+A SpaceX Information App with MVVM Architecture, Retrofit, Glide, Koin, RxJava, etc.
 
 ### API
 SpaceX API by r/SpaceX Developer
