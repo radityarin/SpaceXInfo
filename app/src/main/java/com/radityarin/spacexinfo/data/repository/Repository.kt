@@ -11,13 +11,14 @@ interface Repository {
     fun getPastLaunch(): Observable<ArrayList<Launch>>
     fun getUpcomingLaunch(): Observable<ArrayList<Launch>>
     fun getLatestLaunch(): Observable<Launch>
+    fun getNextLaunch(): Observable<Launch>
     fun getHistoricalEvents(): Observable<ArrayList<History>>
     fun getAllRockets(): Observable<ArrayList<Rockets>>
-
     fun getCacheAllLaunch(): ArrayList<Launch>?
     fun getCachePastLaunch(): ArrayList<Launch>?
     fun getCacheUpcomingLaunch(): ArrayList<Launch>?
     fun getCacheLatestLaunch(): Launch?
+    fun getCacheNextLaunch(): Launch?
     fun getCacheHistoricalEvents(): ArrayList<History>?
     fun getCacheAllRockets(): ArrayList<Rockets>?
 

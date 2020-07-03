@@ -55,6 +55,7 @@ class HistoryFragment : Fragment() {
         }
         return historicalAdapter
     }
+
     private fun observe(adapter: HistoricalAdapter) {
         viewModel.historyListItems.observe(viewLifecycleOwner, Observer {
             adapter.addAll(it)

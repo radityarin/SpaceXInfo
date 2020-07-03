@@ -1,3 +1,5 @@
+@file:Suppress("SENSELESS_COMPARISON")
+
 package com.radityarin.spacexinfo.ui.detail
 
 import android.content.Intent
@@ -10,7 +12,6 @@ import com.radityarin.spacexinfo.R
 import com.radityarin.spacexinfo.data.model.launches.Launch
 import com.radityarin.spacexinfo.databinding.ActivityDetailBinding
 import com.radityarin.spacexinfo.util.Constant.LAUNCH_EXTRA
-
 
 class DetailActivity : AppCompatActivity() {
 
@@ -48,7 +49,11 @@ class DetailActivity : AppCompatActivity() {
                         )
                     )
                 } else {
-                    Toast.makeText(this@DetailActivity, "Sorry no video available for this launch", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this@DetailActivity,
+                        getString(R.string.no_video_warning),
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
         }

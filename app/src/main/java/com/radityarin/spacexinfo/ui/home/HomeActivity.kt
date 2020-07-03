@@ -21,10 +21,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun setupViews() {
-        // Finding the Navigation Controller
         val navController = findNavController(fragNavHost.id)
-
-        // Setting Navigation Controller with the BottomNavigationView
         bottomNavigation.setupWithNavController(navController)
     }
 }

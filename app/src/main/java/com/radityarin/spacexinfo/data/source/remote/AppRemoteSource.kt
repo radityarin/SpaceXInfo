@@ -9,6 +9,8 @@ class AppRemoteSource(private val api: Api) {
 
     fun latestLaunch() = api.getLatestLaunch()
 
+    fun nextLaunch() = api.getNextLaunch()
+
     fun historicalEvents() = api.getHistoricalEvents()
 
     fun allRockets() = api.getAllRockets()

@@ -20,11 +20,11 @@ class AppController : Application() {
         super.onCreate()
         startKoin {
             androidContext(this@AppController)
-            modules(appModule)
             modules(networkModule)
-            modules(viewModelModule)
-            modules(repositoryModule)
             modules(persistenceModule)
+            modules(repositoryModule)
+            modules(appModule)
+            modules(viewModelModule)
         }
 
         CalligraphyConfig.initDefault(calConfig)

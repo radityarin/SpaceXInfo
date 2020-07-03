@@ -6,6 +6,7 @@ A SpaceX Information App with MVVM Architecture, Retrofit, Glide, Koin, RxJava, 
 - Show past launch
 - Show all rocket
 - Show all historical events
+- Show next launch Widgets and quick button to watch
 - Caching with Hawk makes loads faster
 
 ### API
@@ -28,6 +29,7 @@ https://docs.spacexdata.com/?version=latest
 ![Missions Details](screenshots/spacexinfo_details.png "Missions Details")
 ![List of Rockets](screenshots/spacexinfo_rockets.png "A list of Rockets")
 ![List of Historical Events](screenshots/spacexinfo_historical.png "A list of Historical Events")
+![Widgets](screenshots/spacexinfo_widget.png "A widget showing next launch")
 
 ### License
 ```

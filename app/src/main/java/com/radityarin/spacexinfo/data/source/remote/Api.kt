@@ -20,6 +20,9 @@ interface Api {
     @GET("launches/latest")
     fun getLatestLaunch(): Observable<Launch>
 
+    @GET("launches/next")
+    fun getNextLaunch(): Observable<Launch>
+
     @GET("history")
     fun getHistoricalEvents(): Observable<ArrayList<History>>
 

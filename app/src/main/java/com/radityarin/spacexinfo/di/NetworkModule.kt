@@ -20,7 +20,7 @@ val networkModule = module {
             .readTimeout(Constant.NETWORK_TIMEOUT, TimeUnit.SECONDS)
             .writeTimeout(Constant.NETWORK_TIMEOUT, TimeUnit.SECONDS)
             .addInterceptor(
-                httpLoggingInterceptor.apply {
+                HttpLoggingInterceptor().apply {
                     httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
                 }
             )

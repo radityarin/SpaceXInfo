@@ -58,6 +58,8 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleRuntimeVersion"
 
     implementation "org.koin:koin-androidx-viewmodel:$koinVersion"
+
+    // hawk
     implementation "com.orhanobut:hawk:$hawkVersion"
 
     // RxJava
@@ -67,15 +69,19 @@ dependencies {
 
     implementation "uk.co.chrisjenx:calligraphy:$calligraphyVersion"
 
+    // retrofit
     implementation "com.squareup.okhttp3:logging-interceptor:$okHttpInterceptorVersion"
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersionConverter"
 
+    // glide
     implementation "com.github.bumptech.glide:glide:$glideVersion"
+
     implementation "androidx.legacy:legacy-support-v4:$legacyVersion"
     implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
     implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
 
+    // facebook shimmer
     implementation "com.facebook.shimmer:shimmer:$shimmerVersion"
 
     testImplementation 'junit:junit:4.13'

@@ -12,6 +12,7 @@ class AppPrefSource {
     fun getUpcomingLaunch(): ArrayList<Launch>? = Hawk.get(CacheKey.UPCOMING_LAUNCH, null)
     fun getPastLaunch(): ArrayList<Launch>? = Hawk.get(CacheKey.PAST_LAUNCH, null)
     fun getLatestLaunch(): Launch? = Hawk.get(CacheKey.LATEST_LAUNCH, null)
+    fun getNextLaunch(): Launch? = Hawk.get(CacheKey.NEXT_LAUNCH, null)
     fun getHistoricalEvents(): ArrayList<History>? = Hawk.get(CacheKey.HISTORICAL_EVENTS, null)
     fun getAllRockets(): ArrayList<Rockets>? = Hawk.get(CacheKey.ALL_ROCKETS, null)
 
@@ -19,6 +20,7 @@ class AppPrefSource {
     fun setCacheUpcomingLaunch(launches: ArrayList<Launch>)= Hawk.put(CacheKey.UPCOMING_LAUNCH, launches)
     fun setCachePastLaunch(launches: ArrayList<Launch>)= Hawk.put(CacheKey.PAST_LAUNCH, launches)
     fun setCacheLatestLaunch(launch: Launch)= Hawk.put(CacheKey.LATEST_LAUNCH, launch)
+    fun setCacheNextLaunch(launch: Launch)= Hawk.put(CacheKey.NEXT_LAUNCH, launch)
     fun setCacheHistoricalEvents(history: ArrayList<History>)= Hawk.put(CacheKey.HISTORICAL_EVENTS, history)
     fun setCacheAllRockets(rockets: ArrayList<Rockets>)= Hawk.put(CacheKey.ALL_ROCKETS, rockets)
 

@@ -13,7 +13,7 @@
         android:layout_gravity="center_vertical"
         android:scaleType="fitCenter"
         android:src="@drawable/mission_patch_placeholder"
-        android:contentDescription="TODO" />
+        android:contentDescription="@string/mission_patch" />
 
     <LinearLayout
         android:layout_width="match_parent"

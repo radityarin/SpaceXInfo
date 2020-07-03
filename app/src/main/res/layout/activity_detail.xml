@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Rocket Type"
+            android:text="@string/rocket_type_label"
             android:textColor="@android:color/black"
             android:textSize="20sp" />
 
@@ -52,7 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Payload"
+            android:text="@string/payload_lable"
             android:textColor="@android:color/black"
             android:textSize="20sp" />
 
@@ -60,14 +60,14 @@
             android:id="@+id/tv_payload"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/rocket_type_placeholder"
+            android:text="@string/spacexinfo_payload"
             android:textSize="16sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Launch Date"
+            android:text="@string/launch_date_label"
             android:textColor="@android:color/black"
             android:textSize="20sp" />
 
@@ -81,7 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Launch Site"
+            android:text="@string/launch_site_label"
             android:textColor="@android:color/black"
             android:textSize="20sp" />
 
@@ -89,13 +89,13 @@
             android:id="@+id/tv_launch_site"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/description_placeholder" />
+            android:text="@string/spacexinfo_launch_site" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Description"
+            android:text="@string/description_label"
             android:textColor="@android:color/black"
             android:textSize="20sp" />
 
@@ -117,6 +117,6 @@
         android:background="@drawable/button_background"
         android:textColor="@android:color/white"
         android:textSize="16sp"
-        android:text="Watch Here" />
+        android:text="@string/watch_here" />
 
 </RelativeLayout>

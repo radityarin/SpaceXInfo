@@ -14,6 +14,7 @@
         android:roundIcon="@drawable/mission_patch_placeholder"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <receiver android:name=".widget.NextLaunchWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -23,6 +24,7 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/next_launch_widget_info" />
         </receiver>
+
 
         <activity android:name=".ui.home.HomeActivity"
             android:screenOrientation="portrait">

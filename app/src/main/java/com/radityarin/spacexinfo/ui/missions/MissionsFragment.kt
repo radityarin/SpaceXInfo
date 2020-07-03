@@ -61,6 +61,7 @@ class MissionsFragment : Fragment() {
 
     private fun initView() {
         viewModel.getUpcomingLaunch()
+        viewModel.getNextLaunch()
         showUpcomingLaunch()
 
         with(binding) {

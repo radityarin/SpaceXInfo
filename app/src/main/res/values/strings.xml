@@ -15,4 +15,17 @@
     <string name="add_widget">Add widget</string>
     <string name="rocket_photo_label">Rocket Photo</string>
     <string name="rockets_label">Rockets</string>
+    <string name="next_launch_label">Next Launch</string>
+    <string name="update_widget_label">Updating widget data</string>
+    <string name="update_widget_succeful_label">Update widget data successful</string>
+    <string name="update_widget_failed_label">Update widget data failed</string>
+    <string name="no_video_warning">Sorry no video available for this launch</string>
+    <string name="rocket_type_label">Rocket Type</string>
+    <string name="payload_lable">Payload</string>
+    <string name="launch_date_label">Launch Date</string>
+    <string name="launch_site_label">Launch Site</string>
+    <string name="description_label">Description</string>
+    <string name="spacexinfo_payload">SpaceXInfo Payload</string>
+    <string name="spacexinfo_launch_site">SpaceXInfo Launch Site</string>
+    <string name="watch_here">Watch Here</string>
 </resources>
