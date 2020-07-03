@@ -1,4 +1,5 @@
 # SpaceXInfo
+![SpaceX Logo](photo_assets/spacexinfo_missionfragment.png "A list of Missions")
 A SpaceX Information App with MVVM Architecture, Retrofit, Glide, Koin, RxJava, Hawk etc.
 
 ### Features
@@ -25,11 +26,11 @@ https://docs.spacexdata.com/?version=latest
 
 ### Screenshots
 
-![List of Missions](screenshots/spacexinfo_missionfragment.png "A list of Missions")
-![Missions Details](screenshots/spacexinfo_details.png "Missions Details")
-![List of Rockets](screenshots/spacexinfo_rockets.png "A list of Rockets")
-![List of Historical Events](screenshots/spacexinfo_historical.png "A list of Historical Events")
-![Widgets](screenshots/spacexinfo_widget.png "A widget showing next launch")
+![List of Missions](photo_assets/spacexinfo_missionfragment.png "A list of Missions")
+![Missions Details](photo_assets/spacexinfo_details.png "Missions Details")
+![List of Rockets](photo_assets/spacexinfo_rockets.png "A list of Rockets")
+![List of Historical Events](photo_assets/spacexinfo_historical.png "A list of Historical Events")
+![Widgets](photo_assets/spacexinfo_widget.png "A widget showing next launch")
 
 ### License
 ```

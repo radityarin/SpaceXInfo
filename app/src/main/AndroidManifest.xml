@@ -9,9 +9,9 @@
     <application
         android:name=".AppController"
         android:allowBackup="false"
-        android:icon="@drawable/mission_patch_placeholder"
+        android:icon="@drawable/spacexinfo_logo"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/mission_patch_placeholder"
+        android:roundIcon="@drawable/spacexinfo_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
