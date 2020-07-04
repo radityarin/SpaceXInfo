@@ -29,6 +29,7 @@ class DetailActivity : AppCompatActivity() {
     private fun initView() {
         val itemLaunches = intent.getSerializableExtra(LAUNCH_EXTRA) as Launch
         with(binding) {
+            supportActionBar?.title = itemLaunches.missionName
             Glide.with(binding.root)
                 .load(itemLaunches.links.missionPatch)
                 .placeholder(R.drawable.mission_patch_placeholder)

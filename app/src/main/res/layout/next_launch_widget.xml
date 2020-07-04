@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/next_launch_label"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -26,12 +26,14 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_alignParentEnd="true"
-            android:background="@drawable/ic_baseline_refresh_24" />
+            android:background="@drawable/ic_baseline_refresh_24"
+            android:backgroundTint="@android:color/white" />
 
     </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:id="@+id/ll_launch"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:orientation="horizontal">
@@ -56,6 +58,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/title_placeholder"
+                android:textColor="@android:color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -63,25 +66,27 @@
                 android:id="@+id/tv_widget_launch_rocket"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/rocket_type_placeholder" />
+                android:text="@string/rocket_type_placeholder"
+                android:textColor="@android:color/white" />
 
             <TextView
                 android:id="@+id/tv_widget_launch_date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/date_placeholder" />
+                android:text="@string/date_placeholder"
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
     </LinearLayout>
 
     <Button
-        android:layout_margin="16dp"
         android:id="@+id/btn_widget_watch_video"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAllCaps="false"
+        android:layout_marginVertical="16dp"
         android:background="@drawable/button_background"
+        android:text="@string/watch_here"
+        android:textAllCaps="false"
         android:textColor="@android:color/white"
-        android:textSize="16sp"
-        android:text="@string/watch_here" />
+        android:textSize="16sp" />
 </LinearLayout>

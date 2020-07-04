@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:fitsSystemWindows="true"
+    android:background="@color/colorBackground"
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeActivity">
 
@@ -21,7 +22,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@android:color/white"
+        android:background="@color/colorBackground"
+        app:itemIconTint="@color/bottom_navigation_selector"
         app:menu="@menu/bottom_navigation_menu" />
 
 </RelativeLayout>

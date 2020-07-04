@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="130dp"
     android:padding="8dp"
+    android:background="@color/colorBackground"
     android:orientation="horizontal">
 
     <ImageView
@@ -27,17 +28,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/title_placeholder"
+            android:textColor="@android:color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_launch_rocket"
+            android:textColor="@android:color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/rocket_type_placeholder" />
 
         <TextView
             android:id="@+id/tv_launch_date"
+            android:textColor="@android:color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/date_placeholder" />

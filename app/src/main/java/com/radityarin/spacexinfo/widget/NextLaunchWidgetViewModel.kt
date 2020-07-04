@@ -5,7 +5,4 @@ import com.radityarin.spacexinfo.data.repository.AppRepository
 
 data class NextLaunchWidgetViewModel(
     private val repository: AppRepository
-) : ViewModel() {
-
-
-}
+) : ViewModel()

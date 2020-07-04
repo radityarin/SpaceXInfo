@@ -1,6 +1,7 @@
 package com.radityarin.spacexinfo.data.source.pref
 
 import com.orhanobut.hawk.Hawk
+import com.radityarin.spacexinfo.data.model.company.Company
 import com.radityarin.spacexinfo.data.model.historical.History
 import com.radityarin.spacexinfo.data.model.launches.Launch
 import com.radityarin.spacexinfo.data.model.rockets.Rockets
@@ -15,6 +16,7 @@ class AppPrefSource {
     fun getNextLaunch(): Launch? = Hawk.get(CacheKey.NEXT_LAUNCH, null)
     fun getHistoricalEvents(): ArrayList<History>? = Hawk.get(CacheKey.HISTORICAL_EVENTS, null)
     fun getAllRockets(): ArrayList<Rockets>? = Hawk.get(CacheKey.ALL_ROCKETS, null)
+    fun getAboutCompany(): Company? = Hawk.get(CacheKey.ABOUT_COMPANY, null)
 
     fun setCacheAllLaunch(launches: ArrayList<Launch>) = Hawk.put(CacheKey.ALL_LAUNCH, launches)
     fun setCacheUpcomingLaunch(launches: ArrayList<Launch>)= Hawk.put(CacheKey.UPCOMING_LAUNCH, launches)
@@ -23,5 +25,6 @@ class AppPrefSource {
     fun setCacheNextLaunch(launch: Launch)= Hawk.put(CacheKey.NEXT_LAUNCH, launch)
     fun setCacheHistoricalEvents(history: ArrayList<History>)= Hawk.put(CacheKey.HISTORICAL_EVENTS, history)
     fun setCacheAllRockets(rockets: ArrayList<Rockets>)= Hawk.put(CacheKey.ALL_ROCKETS, rockets)
+    fun setCacheAboutCompany(company: Company)= Hawk.put(CacheKey.ABOUT_COMPANY, company)
 
 }

@@ -28,4 +28,14 @@
     <string name="spacexinfo_payload">SpaceXInfo Payload</string>
     <string name="spacexinfo_launch_site">SpaceXInfo Launch Site</string>
     <string name="watch_here">Watch Here</string>
+    <string name="about_company">About Company</string>
+    <string name="company_summary_dummy">Company Summary</string>
+    <string name="spacex">SpaceX</string>
+    <string name="founder_label">Founder</string>
+    <string name="ceo_label">CEO</string>
+    <string name="coo_label">COO</string>
+    <string name="headquarters_label">Headquarters</string>
+    <string name="websites_label">Websites</string>
+    <string name="spacexinfo_mission_name_label">SpaceXInfo Mission Name</string>
+    <string name="mission_name">Mission Name</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.radityarin.spacexinfo.data.repository
 
+import com.radityarin.spacexinfo.data.model.company.Company
 import com.radityarin.spacexinfo.data.model.historical.History
 import com.radityarin.spacexinfo.data.model.launches.Launch
 import com.radityarin.spacexinfo.data.model.rockets.Rockets
@@ -113,6 +114,19 @@ class AppRepository constructor(
         return Observable.concatArrayEager(localObservable, remoteObservable)
     }
 
+    override fun getAboutCompany(): Observable<Company> {
+        val cacheAboutCompany = getCacheAboutCompany()
+        val localObservable = if (cacheAboutCompany != null) Observable.just(cacheAboutCompany)
+        else Observable.empty()
+
+        val remoteObservable = api.aboutCompany()
+            .flatMap {
+                setCacheAboutCompany(it)
+                Observable.just(it)
+            }
+
+        return Observable.concatArrayEager(localObservable, remoteObservable)    }
+
     override fun getCacheAllLaunch(): ArrayList<Launch>? = pref.getAllLaunch()
     override fun getCachePastLaunch(): ArrayList<Launch>? = pref.getPastLaunch()
     override fun getCacheUpcomingLaunch(): ArrayList<Launch>? = pref.getUpcomingLaunch()
@@ -120,6 +134,7 @@ class AppRepository constructor(
     override fun getCacheNextLaunch(): Launch? = pref.getNextLaunch()
     override fun getCacheHistoricalEvents(): ArrayList<History>? = pref.getHistoricalEvents()
     override fun getCacheAllRockets(): ArrayList<Rockets>? = pref.getAllRockets()
+    override fun getCacheAboutCompany(): Company? = pref.getAboutCompany()
     private fun setCacheAllLaunch(launches: ArrayList<Launch>) = pref.setCacheAllLaunch(launches)
     private fun setCachePastLaunch(launches: ArrayList<Launch>) = pref.setCachePastLaunch(launches)
     private fun setCacheUpcomingLaunch(launches: ArrayList<Launch>) = pref.setCacheUpcomingLaunch(launches)
@@ -127,5 +142,6 @@ class AppRepository constructor(
     private fun setCacheNextLaunch(launch: Launch) = pref.setCacheNextLaunch(launch)
     private fun setCacheHistoricalEvents(history: ArrayList<History>) = pref.setCacheHistoricalEvents(history)
     private fun setCacheAllRockets(rockets: ArrayList<Rockets>) = pref.setCacheAllRockets(rockets)
+    private fun setCacheAboutCompany(company: Company) = pref.setCacheAboutCompany(company)
 
 }

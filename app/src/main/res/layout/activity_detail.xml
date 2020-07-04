@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackground"
     android:orientation="vertical"
     tools:context=".ui.detail.DetailActivity">
 
@@ -13,22 +14,12 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/title_placeholder"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
         <ImageView
-            android:layout_marginTop="8dp"
             android:id="@+id/iv_mission_patch"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
             android:contentDescription="@string/mission_patch"
             android:scaleType="fitCenter"
             android:src="@color/colorPrimary" />
@@ -37,8 +28,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:text="@string/mission_name"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/spacexinfo_mission_name_label"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="@string/rocket_type_label"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="20sp" />
 
         <TextView
@@ -46,6 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/rocket_type_placeholder"
+            android:textColor="@android:color/white"
             android:textSize="16sp" />
 
         <TextView
@@ -53,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/payload_lable"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="20sp" />
 
         <TextView
@@ -61,6 +68,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/spacexinfo_payload"
+            android:textColor="@android:color/white"
             android:textSize="16sp" />
 
         <TextView
@@ -68,55 +76,58 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/launch_date_label"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/tv_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/date_placeholder" />
+            android:text="@string/date_placeholder"
+            android:textColor="@android:color/white" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/launch_site_label"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/tv_launch_site"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/spacexinfo_launch_site" />
+            android:text="@string/spacexinfo_launch_site"
+            android:textColor="@android:color/white" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/description_label"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/tv_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/description_placeholder" />
+            android:text="@string/description_placeholder"
+            android:textColor="@android:color/white" />
 
     </LinearLayout>
 
     <Button
-        android:layout_alignParentBottom="true"
-        android:layout_margin="16dp"
         android:id="@+id/btn_watch_video"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAllCaps="false"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
         android:background="@drawable/button_background"
+        android:text="@string/watch_here"
+        android:textAllCaps="false"
         android:textColor="@android:color/white"
-        android:textSize="16sp"
-        android:text="@string/watch_here" />
+        android:textSize="16sp" />
 
 </RelativeLayout>

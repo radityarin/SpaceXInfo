@@ -1,5 +1,6 @@
 package com.radityarin.spacexinfo.data.repository
 
+import com.radityarin.spacexinfo.data.model.company.Company
 import com.radityarin.spacexinfo.data.model.historical.History
 import com.radityarin.spacexinfo.data.model.launches.Launch
 import com.radityarin.spacexinfo.data.model.rockets.Rockets
@@ -14,6 +15,7 @@ interface Repository {
     fun getNextLaunch(): Observable<Launch>
     fun getHistoricalEvents(): Observable<ArrayList<History>>
     fun getAllRockets(): Observable<ArrayList<Rockets>>
+    fun getAboutCompany(): Observable<Company>
     fun getCacheAllLaunch(): ArrayList<Launch>?
     fun getCachePastLaunch(): ArrayList<Launch>?
     fun getCacheUpcomingLaunch(): ArrayList<Launch>?
@@ -21,5 +23,6 @@ interface Repository {
     fun getCacheNextLaunch(): Launch?
     fun getCacheHistoricalEvents(): ArrayList<History>?
     fun getCacheAllRockets(): ArrayList<Rockets>?
+    fun getCacheAboutCompany(): Company?
 
 }

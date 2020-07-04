@@ -1,5 +1,6 @@
 package com.radityarin.spacexinfo.data.source.remote
 
+import com.radityarin.spacexinfo.data.model.company.Company
 import com.radityarin.spacexinfo.data.model.historical.History
 import com.radityarin.spacexinfo.data.model.launches.Launch
 import com.radityarin.spacexinfo.data.model.rockets.Rockets
@@ -28,5 +29,8 @@ interface Api {
 
     @GET("rockets")
     fun getAllRockets(): Observable<ArrayList<Rockets>>
+
+    @GET("info")
+    fun getAboutCompany(): Observable<Company>
 
 }

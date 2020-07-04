@@ -23,4 +23,5 @@ object CacheKey {
     const val NEXT_LAUNCH = "cache_next_launch"
     const val HISTORICAL_EVENTS = "cache_historical_events"
     const val ALL_ROCKETS = "cache_all_rockets"
+    const val ABOUT_COMPANY = "cache_about_company"
 }

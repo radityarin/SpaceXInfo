@@ -13,6 +13,8 @@ import com.bumptech.glide.request.target.AppWidgetTarget
 import com.radityarin.spacexinfo.R
 import com.radityarin.spacexinfo.data.model.launches.Launch
 import com.radityarin.spacexinfo.data.repository.Repository
+import com.radityarin.spacexinfo.ui.detail.DetailActivity
+import com.radityarin.spacexinfo.util.Constant
 import com.radityarin.spacexinfo.util.Constant.UPDATE
 import com.radityarin.spacexinfo.util.toast
 import io.reactivex.rxjava3.schedulers.Schedulers
@@ -48,8 +50,14 @@ class NextLaunchWidget : AppWidgetProvider(), KoinComponent {
                 action = UPDATE
             }
             val pendingIntentRefresh = PendingIntent.getBroadcast(context, 0, intent, 0)
-            val intentWatchVideo = Intent(Intent.ACTION_VIEW, Uri.parse(launch?.links?.videoLink.toString()))
+            val intentWatchVideo =
+                Intent(Intent.ACTION_VIEW, Uri.parse(launch?.links?.videoLink.toString()))
             val pendingIntentWatchVideo = PendingIntent.getActivity(context, 0, intentWatchVideo, 0)
+
+            val intentDetailLaunch = Intent(context, DetailActivity::class.java)
+            intentDetailLaunch.putExtra(Constant.LAUNCH_EXTRA, launch)
+            val pendingintentDetailLaunch =
+                PendingIntent.getActivity(context, 0, intentDetailLaunch, 0)
 
             val views = RemoteViews(context?.packageName, R.layout.next_launch_widget)
             val target =
@@ -64,6 +72,7 @@ class NextLaunchWidget : AppWidgetProvider(), KoinComponent {
             views.setTextViewText(R.id.tv_widget_launch_date, launch?.launchDateLocal)
             views.setOnClickPendingIntent(R.id.btn_widget_refresh_next_launch, pendingIntentRefresh)
             views.setOnClickPendingIntent(R.id.btn_widget_watch_video, pendingIntentWatchVideo)
+            views.setOnClickPendingIntent(R.id.ll_launch, pendingintentDetailLaunch)
             appWidgetManager?.updateAppWidget(appWidgetId, views)
         }
     }
@@ -93,13 +102,13 @@ class NextLaunchWidget : AppWidgetProvider(), KoinComponent {
 
 
     private fun updateData(context: Context?) {
-        val appWidgetManager = AppWidgetManager.getInstance(context);
+        val appWidgetManager = AppWidgetManager.getInstance(context)
         val thisAppWidgetComponentName =
             ComponentName(context?.packageName.orEmpty(), javaClass.name)
         val appWidgetIds = appWidgetManager.getAppWidgetIds(
             thisAppWidgetComponentName
         )
-        onUpdate(context, appWidgetManager, appWidgetIds);
+        onUpdate(context, appWidgetManager, appWidgetIds)
     }
 
 }

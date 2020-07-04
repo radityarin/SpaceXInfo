@@ -15,4 +15,6 @@ class AppRemoteSource(private val api: Api) {
 
     fun allRockets() = api.getAllRockets()
 
+    fun aboutCompany() = api.getAboutCompany()
+
 }
