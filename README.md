@@ -1,5 +1,5 @@
 # SpaceXInfo
-![SpaceX Logo](photo_assets/spacexinfo_logo.png "A list of Missions")
+![SpaceXInfo Banner](photo_assets/spacexinfo_banner.png "A SpaceXInfo Banner")
 
 A SpaceX Information App with MVVM Architecture, Retrofit, Glide, Koin, RxJava, Hawk etc.
 
