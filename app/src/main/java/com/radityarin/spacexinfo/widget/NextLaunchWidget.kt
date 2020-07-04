@@ -34,7 +34,17 @@ class NextLaunchWidget : AppWidgetProvider(), KoinComponent {
         appWidgetIds: IntArray?
     ) {
         appRepository.getCacheNextLaunch()?.let {
-            updateAppWidget(context, appWidgetManager, appWidgetIds, it)
+            if (it == null) {
+                val intent = Intent(context, javaClass).apply {
+                    action = UPDATE
+                }
+                val pendingIntentRefresh = PendingIntent.getBroadcast(context, 0, intent, 0)
+                val views = RemoteViews(context?.packageName, R.layout.next_launch_widget)
+                views.setOnClickPendingIntent(R.id.btn_widget_refresh_next_launch, pendingIntentRefresh)
+                appWidgetManager?.updateAppWidget(appWidgetIds, views)
+            } else {
+                updateAppWidget(context, appWidgetManager, appWidgetIds, it)
+            }
         }
     }
 
@@ -56,7 +66,7 @@ class NextLaunchWidget : AppWidgetProvider(), KoinComponent {
 
             val intentDetailLaunch = Intent(context, DetailActivity::class.java)
             intentDetailLaunch.putExtra(Constant.LAUNCH_EXTRA, launch)
-            val pendingintentDetailLaunch =
+            val pendingIntentDetailLaunch =
                 PendingIntent.getActivity(context, 0, intentDetailLaunch, 0)
 
             val views = RemoteViews(context?.packageName, R.layout.next_launch_widget)
@@ -72,7 +82,7 @@ class NextLaunchWidget : AppWidgetProvider(), KoinComponent {
             views.setTextViewText(R.id.tv_widget_launch_date, launch?.launchDateLocal)
             views.setOnClickPendingIntent(R.id.btn_widget_refresh_next_launch, pendingIntentRefresh)
             views.setOnClickPendingIntent(R.id.btn_widget_watch_video, pendingIntentWatchVideo)
-            views.setOnClickPendingIntent(R.id.ll_launch, pendingintentDetailLaunch)
+            views.setOnClickPendingIntent(R.id.ll_launch, pendingIntentDetailLaunch)
             appWidgetManager?.updateAppWidget(appWidgetId, views)
         }
     }
@@ -91,7 +101,6 @@ class NextLaunchWidget : AppWidgetProvider(), KoinComponent {
                     showToast(context, context?.getString(R.string.update_widget_failed_label))
                     it.printStackTrace()
                 })
-
         }
 
     }

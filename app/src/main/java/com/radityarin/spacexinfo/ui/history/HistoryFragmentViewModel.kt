@@ -26,4 +26,14 @@ class HistoryFragmentViewModel(
             })
             .addTo(compositeDisposable)
     }
+
+    fun loadCacheHistoricalEvents() {
+        val cacheHistoricalEvents = repository.getCacheHistoricalEvents()
+        if (cacheHistoricalEvents == null) {
+            getHistoricalEvents()
+        } else {
+            cacheHistoricalEvents.reverse()
+            _historyListItems.postValue(cacheHistoricalEvents)
+        }
+    }
 }

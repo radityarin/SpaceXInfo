@@ -38,6 +38,16 @@ class MissionsFragmentViewModel(
             .addTo(compositeDisposable)
     }
 
+    fun loadCachePastLaunch() {
+        val cachePastLaunch = repository.getCachePastLaunch()
+        if (cachePastLaunch == null) {
+            getPastLaunch()
+        } else {
+            cachePastLaunch.reverse()
+            _missionsListItem.postValue(cachePastLaunch)
+        }
+    }
+
     fun getUpcomingLaunch() {
         repository.getUpcomingLaunch().observeOn(Schedulers.io())
             .subscribeOn(Schedulers.io())
@@ -49,4 +59,12 @@ class MissionsFragmentViewModel(
             .addTo(compositeDisposable)
     }
 
+    fun loadCacheUpcomingLaunch() {
+        val cacheUpcomingLaunch = repository.getCacheUpcomingLaunch()
+        if (cacheUpcomingLaunch == null) {
+            getUpcomingLaunch()
+        } else {
+            _missionsListItem.postValue(repository.getCacheUpcomingLaunch())
+        }
+    }
 }

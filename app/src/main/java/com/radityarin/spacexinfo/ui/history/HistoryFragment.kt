@@ -40,7 +40,10 @@ class HistoryFragment : Fragment() {
     }
 
     private fun initView() {
-        viewModel.getHistoricalEvents()
+        viewModel.loadCacheHistoricalEvents()
+        with(binding) {
+            swipeRefresh.setOnRefreshListener { viewModel.getHistoricalEvents() }
+        }
     }
 
     private fun setAdapter(): HistoricalAdapter {

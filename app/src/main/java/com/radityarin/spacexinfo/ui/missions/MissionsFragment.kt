@@ -51,9 +51,8 @@ class MissionsFragment : Fragment() {
         return launchAdapter
     }
 
-
     private fun initView() {
-        viewModel.getUpcomingLaunch()
+        viewModel.loadCacheUpcomingLaunch()
         viewModel.getNextLaunch()
         showUpcomingLaunch()
 
@@ -68,11 +67,11 @@ class MissionsFragment : Fragment() {
             }
             btnPastLaunch.setOnClickListener {
                 showPastLaunch()
-                viewModel.getPastLaunch()
+                viewModel.loadCachePastLaunch()
             }
             btnUpcomingLaunch.setOnClickListener {
                 showUpcomingLaunch()
-                viewModel.getUpcomingLaunch()
+                viewModel.loadCacheUpcomingLaunch()
             }
         }
     }

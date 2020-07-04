@@ -3,7 +3,7 @@ package com.radityarin.spacexinfo.util
 const val DEFAULT_FONT = "fonts/GoogleSans-Regular.ttf"
 
 object Constant {
-    const val NETWORK_TIMEOUT = 60L
+    const val NETWORK_TIMEOUT = 10L
 
     const val BASE_URL = "https://api.spacexdata.com/v3/"
 

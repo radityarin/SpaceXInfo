@@ -57,13 +57,13 @@ class RocketsFragment : Fragment() {
 
 
     private fun initView() {
+        viewModel.loadCacheAllRockets()
         with(binding) {
             shimmerViewContainer.startShimmerAnimation()
             swipeRefresh.setOnRefreshListener {
                 viewModel.getAllRockets()
             }
         }
-        viewModel.getAllRockets()
     }
 
 

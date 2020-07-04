@@ -27,4 +27,14 @@ class RocketFragmentViewModel(
             .addTo(compositeDisposable)
     }
 
+    fun loadCacheAllRockets() {
+        val cacheAllRockets = repository.getCacheAllRockets()
+        if (cacheAllRockets == null) {
+            getAllRockets()
+        } else {
+            cacheAllRockets.reverse()
+            _rocketsListItems.postValue(cacheAllRockets)
+        }
+    }
+
 }
