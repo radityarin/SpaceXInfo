@@ -3,9 +3,6 @@
 
 A SpaceX Information App with MVVM Architecture, Retrofit, Glide, Koin, RxJava, Hawk etc.
 
-### Beta Available on Playstore 
-<a href="https://play.google.com/store/apps/details?id=com.radityarin.spacexinfo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/512px-Google_Play_Store_badge_EN.svg.png" width="200"/></a>
-
 ### Features
 - Show upcoming launch
 - Show past launch
@@ -25,8 +22,7 @@ https://docs.spacexdata.com/?version=latest
 4. Glide
 5. ViewBinding
 6. Facebook Shimmer
-7. Jetpack Navigation 
-8. Hawk
+7. Hawk
 
 ### Screenshots
 
